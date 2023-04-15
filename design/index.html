@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <a href="../../hdwallet\deposit.html">
+        <button id="deposit" style="display: none">deposit</button>
+    </a>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Add this line -->
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Bowlby+One&display=swap" rel="stylesheet">
+    <a href="coinflip.html">
+        <button id="coinFlipButton">Coin flip</button>
+    </a>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+</head>
+<body>
+  
+  <div id="fading-image-1" style="height: 650px;"></div>
+  <div id="fading-image-2" style="height: 650px;"></div>
+  <div id="fading-image-3" style="height: 650px;"></div>
+  
+  
+    <h1 class="bold-text">BITCOIN GOBLINS</h1>
+
+    <h1 class="Colletions">Colletions</h1>
+
+    <h1 class="popular-tools">Popular tools</h1>
+
+    <div class="button-container">
+      <button class="Stake-button">Stake</button>
+      <button class="Utility-button">Utility</button>
+      <button class="Mutate-Button">Mutate</button>
+    </div>
+
+<div class="main">
+    <div class="resizableContainer">
+        <button id="connectButton">Connect Wallet</button>
+        <button id="ordinalsButton" style="display: none">Show Ordinals</button>
+        <button id="checkEligibilityButton">Check Eligibility</button>
+        <p id="walletAddressDisplay"></p>
+    </div>
+</div>
+<div id="ordinalsPopup" class="popup-container" style="display: none;">
+    <button id="closePopup" class="close-popup">&times;</button>
+    <div class="mainContainer">
+        <div class="collectionContainer">
+            <div id="ordinalsContainer"></div>
+        </div>
+    </div>
+</div>
+<div class="bottom-container">
+    <button class="bottom-button">
+      <img src="../images/banner mutant.png" alt="Coinflip"> <!-- Replace with your image path -->
+      <span class="bottom-button-text">Coinflip</span>
+    </button>
+    <button class="bottom-button">
+      <img src="../images/Mutants in the forge.png" alt="Snapshot"> <!-- Replace with your image path -->
+      <span class="bottom-button-text">Snapshot</span>
+    </button>
+    <button class="bottom-button">
+      <img src="../images/Mutants in the forge.png" alt="Stake"> <!-- Replace with your image path -->
+      <span class="bottom-button-text">Stake</span>
+    </button>
+    <button class="bottom-button">
+      <img src="../images/banner mutant.png" alt="Raffle"> <!-- Replace with your image path -->
+      <span class="bottom-button-text">Raffle</span>
+    </button>
+  </div>
+  </div>
+
+<div class="header">
+    <div class="buttons-container">
+  <div class="social-buttons">
+    <button class="twitter-button">
+      <img src="../images/Twitter logo.png" alt="twitter"> <!-- Replace with your image path -->
+    </button>
+    <button class="discord-button">
+      <img src="../images/Discord logo.png" alt="discord"> <!-- Replace with your image path -->
+    </button>
+  </div>
+<div class="hamburger">
+    &#9776;
+</div>
+<div class="popup">
+    <button id="snapshotButton">Snapshot</button>
+    <button id="genesisGoblinsButton">Genesis Goblins</button>
+</div>
+<div id="coinFlipContainer"></div>
+<script src="../js/app.js"></script>
+<script type="module" src="../js/menu.js"></script>
+<script>
+  function resizeText() {
+    const screenWidth = window.innerWidth;
+    const firstTextSize = Math.max(18, screenWidth * 0.03);
+    const secondTextSize = Math.max(12, screenWidth * 0.015);
+    const thirdTextSize = Math.max(10, screenWidth * 0.01);
+
+    document.querySelector(".first-text").style.fontSize = `${firstTextSize}px`;
+    document.querySelector(".second-text").style.fontSize = `${secondTextSize}px`;
+    document.querySelector(".third-text").style.fontSize = `${thirdTextSize}px`;
+  }
+
+  window.addEventListener("resize", resizeText);
+  window.addEventListener("DOMContentLoaded", resizeText);
+</script>
+<div class="extra-space"></div>
+</body>
+</html>
+<div class="orange-box">
+  <p class="first-text">Bitcoin Goblins</p>
+  <p class="second-text">The Genesis Collection</p>
+  <p class="third-text">99 Supply</p>
+  <p class="fourth-text">About the Collection</p>
+  <button class="Marketplace-button-orange">Marketplace</button>
+  <p class="fifth-text">Patient 15 exhibited an unforeseen surge in aggression. The patient attempted to shatter the containment glass, triggering the security alarm in the process. We managed to regain control of the situation. As a precautionary measure, we have doubled the patient's dosage of the goblin extract in order to suppress any further outbursts. Upon closer inspection, we discovered a crack in the patient's pod, likely a result of their forceful actions. We have scheduled the pod for replacement tomorrow to ensure that no further complications arise.</p>
+</div>
+
+  <div class="green-box">
+    <p class="first-text">Goblin Scientisct</p>
+    <p class="second-text">The Second Collection</p>
+    <p class="third-text">500 Supply</p>
+    <p class="fourth-text">About the Collection</p>
+    <button class="Marketplace-button-green">Marketplace</button>
+    <p class="fifth-text">Patient 15 exhibited an unforeseen surge in aggression. The patient attempted to shatter the containment glass, triggering the security alarm in the process. We managed to regain control of the situation. As a precautionary measure, we have doubled the patient's dosage of the goblin extract in order to suppress any further outbursts. Upon closer inspection, we discovered a crack in the patient's pod, likely a result of their forceful actions. We have scheduled the pod for replacement tomorrow to ensure that no further complications arise.</p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,794 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: "Bowlby One", sans-serif;
+}
+.extra-space {
+  height: 300vh; /* Adjust this value to your preferred height */
+}
+
+body {
+  background-color: #4a1a77;
+  position: relative;
+}
+
+#fading-image-1, #fading-image-2, #fading-image-3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center top;
+  animation: fadeinout 18s infinite;
+  z-index: -1;
+}
+
+#fading-image-1 {
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, #4a1a77 100%), url('./images/banner mutant.png');
+  background-size: 100%;
+}
+
+#fading-image-2 {
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, #4a1a77 100%), url('./images/Mutants in the forge.png');
+  background-size: 100%;
+  animation-delay: 6s;
+}
+
+#fading-image-3 {
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0) 50%, #4a1a77 100%), url('./images/mutants in forest.jpg');
+  background-size: ;
+  animation-delay: 12s;
+}
+
+@keyframes fadeinout {
+  0%, 100% {
+    opacity: 0;
+  } 
+  16.66%, 50% {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  #fading-image-1, #fading-image-2, #fading-image-3 {
+    background-position: top center;
+  }
+}
+
+
+.bold-text {
+  position: absolute;
+  top: 650px; /* Changed to fixed pixel value */
+  left: 1vw; /* Use viewport units for horizontal responsiveness */
+  font-weight: bold;
+  font-size: 100px;
+  text-align: left;
+  color: white;
+  padding-left: 20px; /* Added padding-left */
+}
+
+/* Add a media query for screens smaller than 768px */
+@media (max-width: 768px) {
+  .bold-text {
+    left: 2vw; /* Adjust the left position on smaller screens */
+    font-size: 50px; /* Adjust the font size on smaller screens */
+  }
+}
+
+/* Add a media query for screens smaller than 1100px */
+@media (max-width: 1100px) {
+  .bold-text {
+    left: 3vw; /* Adjust the left position on smaller screens */
+  }
+}
+
+.Colletions {
+  position: absolute;
+  top: 1400px; /* Changed to fixed pixel value */
+  left: 5vw; /* Use viewport units for horizontal responsiveness */
+  font-weight: bold;
+  font-size: 50px;
+  text-align: left;
+  color: white;
+  padding-left: 20px; /* Added padding-left */
+}
+
+/* Add a media query for screens smaller than 768px */
+@media (max-width: 768px) {
+  .Colletions {
+    left: 2vw; /* Adjust the left position on smaller screens */
+  }
+}
+
+#header {
+  background-color: #333;
+  padding: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  height: 100vh;
+}
+
+.mainContainer {
+  padding: 2rem;
+  padding-top: 1rem;
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+#ordinalsContainer {
+  padding-top: 1rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(40%, 15rem), 1fr));
+  gap: 1rem;
+}
+
+.ordinal {
+  background-color: #2e2e2e;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+
+.ordinal img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.ordinal-name {
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+}
+
+#ordinalsContainer div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+#ordinalsContainer div img {
+  width: 100%;
+}
+
+#ordinalsContainer div p {
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.hamburger {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.popup {
+  display: none;
+  position: absolute;
+  top: 40px;
+  right: 10px;
+  background-color: white;
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.popup-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+}
+
+.close-popup {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
+
+.home-button {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  background-color: #f1f1f1;
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 5px;
+  border: 1px solid #333;
+  z-index: 1000;
+}
+
+.home-button:hover {
+  background-color: #333;
+  color: #f1f1f1;
+}  
+
+.top-right-buttons {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ff7523e3;
+  padding: 10px;
+  border-radius: 50px;
+}
+
+.top-right-button {
+  padding: 10px 20px;
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.top-right-button:hover {
+  background-color: #ff6600;
+}
+
+@media (max-width: 768px) {
+  .bold-text {
+    font-size: 40px;
+  }
+
+  .top-right-buttons {
+    top: 10px;
+    right: 10px;
+  }
+
+  .top-right-button {
+    font-size: 14px;
+  }
+
+  .check-this-out {
+    font-size: 18px;
+  }
+
+  .header-images {
+    left: calc(5% + 40px); /* Updated to position it at the end of the logo on smaller screens */
+  }
+
+  .header-image {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+.popular-tools {
+  position: absolute;
+  top: 950px;
+  left: 25px;
+  color: white;
+  font-size: 24px;
+}
+
+@media (max-width: 790px) {
+  .popular-tools {
+    top: 700px; /* Adjust the value as needed */
+    left: 50%; /* Center the element horizontally */
+    transform: translateX(-50%); /* Center the element horizontally */
+  }
+}
+@media (max-width: 1100px) {
+  .popular-tools {
+    top: 750px; /* Adjust the value as needed */
+    left: 20%; /* Center the element horizontally */
+    transform: translateX(-50%); /* Center the element horizontally */
+  }
+}
+
+/* Social Buttons Styles */
+.social-buttons {
+  position: absolute;
+  bottom: -110px;
+  right: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .social-buttons {
+    bottom: 400px; /* Adjust the value as needed */
+    right: 40px; /* Adjust the value as needed */
+  }
+}
+
+.social-buttons button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 20;
+  margin: 50px;
+}
+
+.social-buttons img {
+  width: 100px; /* Adjust the size of the buttons as needed */
+  height: 80px;
+}
+
+/* You can also add hover effects if desired */
+.social-buttons button:hover {
+  opacity: 0.6;
+}
+
+.top-right-buttons {
+  position: absolute;
+  top: 20px;
+  right: 19%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  transform: translateX(50%); /* Center the buttons horizontally */
+}
+
+.bottom-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.bottom-button {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  transition: background-color 0.3s;
+}
+
+.bottom-button:hover {
+  background-color: black;
+}
+
+.bottom-button img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bottom-button-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 40px;
+  color: white;
+  text-align: center;
+}
+
+.check-this-out {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.bottom-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: -350px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.bottom-button {
+  position: relative;
+  width: 48%; /* Updated width */
+  height: 120px; /* Updated height */
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  transition: background-color 0.3s;
+}
+
+.bottom-button {
+  /* Other existing styles */
+  border-radius: 50px;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s;
+}
+
+.bottom-button:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.bottom-button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  transform: scale(0);
+  opacity: 0;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.bottom-button:hover::before {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.bottom-container {
+  /* Your existing styles */
+}
+
+.bottom-button {
+  /* Your existing styles */
+  width: 48%;
+  height: 120px;
+}
+
+/* Add this media query for smaller screens */
+@media (max-width: 768px) {
+  .bottom-button {
+    width: 100%; /* Adjust to 100% width */
+    height: 100px; /* Use auto height */
+    margin-bottom: 10px; /* Add margin to separate the boxes when stacked */
+  }
+}
+
+/* Add this to your existing CSS file */
+
+
+
+#connectButton {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background-color: transparent;
+  border: none;
+  color: #ff7523e3;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#connectButton:hover {
+  background-color: #ffcc99;
+}
+
+/* Container for the Wallet Connect button */
+#connectButton {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 20px 35px;
+  background-color: #ff7523e3;
+  color: white;
+  border-radius: 50px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#connectButton:hover {
+  background-color: #ff7523e3;
+}
+
+/* Add a media query for the Wallet Connect button */
+@media (max-width: 768px) {
+#connectButton {
+  top: 10px;
+  right: 10px;
+  font-size: 14px;
+}
+}
+
+.button-container {
+display: flex;
+position: fixed;
+top: 10px;
+left: 500px;
+}
+
+.Stake-button,
+.Utility-button,
+.Mutate-Button {
+padding: 10px 20px;
+background-color: #ff7523e3;
+border: none;
+color: white;
+font-size: 16px;
+cursor: pointer;
+transition: background-color 0.3s;
+border-radius: 50px;
+margin-left: 10px;
+}
+
+
+
+
+
+.orange-box {
+  position: absolute;
+  bottom: -120%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80vw;
+  min-height: 60vh;
+  max-height: 90vh;
+  background-color: #ff7523e3;
+  border-radius: 50px;
+  z-index: 1;
+  padding: 1vh;
+}
+
+/* Add media queries to fine-tune the appearance on different screen sizes */
+@media (max-width: 992px) {
+  .orange-box {
+    min-height: 70vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .orange-box {
+    min-height: 80vh;
+  }
+}
+
+@media (max-width: 576px) {
+  .orange-box {
+    min-height: 90vh;
+  }
+}
+
+.first-text {
+  font-size: 3vw; /* Responsive font size */
+  color: white;
+  margin-bottom: -0px;
+}
+
+.second-text {
+  font-size: 1.5vw; /* Responsive font size */
+  color: white;
+  margin-top: -10px;
+}
+
+.third-text {
+  font-size: 1vw; /* Responsive font size */
+  color: white;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  transform: translateY(-100%);
+}
+
+/* Add media queries to adjust font size for the text elements */
+@media (max-width: 992px) {
+  .first-text {
+    font-size: 2.5vw; /* Adjust the font size */
+  }
+  .second-text {
+    font-size: 1.2vw; /* Adjust the font size */
+  }
+  .third-text {
+    font-size: 0.8vw; /* Adjust the font size */
+  }
+}
+
+@media (max-width: 768px) {
+  .first-text {
+    font-size: 4vw; /* Adjust the font size */
+  }
+  .second-text {
+    font-size: 1vw; /* Adjust the font size */
+  }
+  .third-text {
+    font-size: 0.6vw; /* Adjust the font size */
+  }
+}
+
+@media (max-width: 576px) {
+  .first-text {
+    font-size: 1.5vw; /* Adjust the font size */
+  }
+  .second-text {
+    font-size: 0.8vw; /* Adjust the font size */
+  }
+  .third-text {
+    font-size: 0.5vw; /* Adjust the font size */
+  }
+}
+
+
+.Marketplace-button-orange {
+  position: absolute; /* this makes the button positioned relative to the nearest positioned ancestor */
+  top: 90%; /* this sets the distance from the top of the nearest positioned ancestor to the top of the button to 50% */
+  right: 25%;
+  transform: translateY(-50%); /* this centers the button vertically */
+  background-color: #ff7523e3;
+  border: none;
+  color: white;
+  padding: 6px 50px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 23px;
+  border-radius: 20px; /* this creates rounded corners */
+  cursor: pointer;
+  border: 2px solid rgb(2, 4, 22);
+  border-bottom: 8px solid black;
+  font-family: "Bowlby One", sans-serif;
+}
+/* Add a media query for screens smaller than 768px */
+@media (max-width: 768px) {
+  .orange-box {
+    top: 1550px; /* Adjust the position on smaller screens */
+    position: center;
+  }
+}
+/* Add a media query for screens smaller than 991px */
+@media (max-width: 1100px) {
+  .orange-box {
+    top: 1550px; /* Adjust the position on smaller screens */
+    position: center;
+  }
+}
+
+ .green-box {
+  position: absolute;
+  bottom: -190%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80vw;
+  min-height: 60vh;
+  max-height: 90vh;
+  background-color: #27d3c5e3;
+  border-radius: 50px;
+  z-index: 1;
+  padding: 1vh;
+}
+
+/* Add media queries to fine-tune the appearance on different screen sizes */
+@media (max-width: 992px) {
+  .green-box {
+    min-height: 70vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .green-box {
+    min-height: 80vh;
+  }
+}
+
+@media (max-width: 576px) {
+  .green-box {
+    min-height: 90vh;
+  }
+}
+
+.first-text {
+  font-size: 3vw; /* Responsive font size */
+  color: white;
+  margin-bottom: -0px;
+}
+
+.second-text {
+  font-size: 1.5vw; /* Responsive font size */
+  color: white;
+  margin-top: -10px;
+}
+
+.third-text {
+  font-size: 1vw; /* Responsive font size */
+  color: white;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  transform: translateY(-100%);
+}
+
+/* Add media queries to adjust font size for the text elements */
+@media (max-width: 992px) {
+  .first-text {
+    font-size: 2.5vw; /* Adjust the font size */
+  }
+  .second-text {
+    font-size: 1.2vw; /* Adjust the font size */
+  }
+  .third-text {
+    font-size: 0.8vw; /* Adjust the font size */
+  }
+}
+
+@media (max-width: 768px) {
+  .first-text {
+    font-size: 4vw; /* Adjust the font size */
+  }
+  .second-text {
+    font-size: 1vw; /* Adjust the font size */
+  }
+  .third-text {
+    font-size: 0.6vw; /* Adjust the font size */
+  }
+}
+
+@media (max-width: 576px) {
+  .first-text {
+    font-size: 1.5vw; /* Adjust the font size */
+  }
+  .second-text {
+    font-size: 0.8vw; /* Adjust the font size */
+  }
+  .third-text {
+    font-size: 0.5vw; /* Adjust the font size */
+  }
+}
+
+
+.Marketplace-button-green {
+  position: absolute; /* this makes the button positioned relative to the nearest positioned ancestor */
+  top: 90%; /* this sets the distance from the top of the nearest positioned ancestor to the top of the button to 50% */
+  right: 25%;
+  transform: translateY(-50%); /* this centers the button vertically */
+  background-color: #2842d4e3;
+  border: none;
+  color: white;
+  padding: 6px 50px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 23px;
+  border-radius: 20px; /* this creates rounded corners */
+  cursor: pointer;
+  border: 2px solid rgb(2, 4, 22);
+  border-bottom: 8px solid black;
+  font-family: "Bowlby One", sans-serif;
+}
+/* Add a media query for screens smaller than 991px */
+@media (max-width: 1100px) {
+  .green-box {
+    top: 2500px; /* Adjust the position on smaller screens */
+    position: center;
+  }
+}
